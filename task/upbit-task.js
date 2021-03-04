@@ -2,6 +2,7 @@
 const config = require('config');
 const Util = require('../util');
 const redis = require('../redis');
+const logger = require('../logger').getLogger(module);
 
 
 const upbitTask = async (bot) => {
@@ -12,12 +13,11 @@ const upbitTask = async (bot) => {
 
     for (const post of posts) {
       if(!isAlreadyNotified(post.id)) {
-        const message = `[${post.assets}] ${post.text}`;
-
+        const message = `<${post.assets}> ${post.text}`;
         bot.say(message);
         redis.set(post.id, "OK");
-        console.log(`새로운 공시 정보가 감지됐습니다.`);
-        console.log(message);
+        logger.debug(`새로운 공시 정보가 감지됐습니다.`);
+        logger.debug(message);
       }
     }
   } catch(err) {
