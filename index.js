@@ -11,8 +11,8 @@ const scheduler = async () => {
 
     await upbitTask(bot);
 
-  } catch(err) {
-    console.log(err);
+  } catch(e) {
+    logger.error(e);
   } finally {
     redis.disconnect();
   }

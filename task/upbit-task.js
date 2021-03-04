@@ -21,8 +21,8 @@ const upbitTask = async (bot) => {
         logger.debug(message);
       }
     }
-  } catch(err) {
-    console.log(err);
+  } catch(e) {
+    throw e;
   }
 }
 
