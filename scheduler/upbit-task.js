@@ -1,25 +1,16 @@
 "use strict";
-const got = require('got');
-const config = require("config");
+const config = require('config');
+const Util = require('../util');
+
 
 const upbitTask = async (bot) => {
   try {
-    const sites = config.site;
+    const upbit = config.site.upbit;
+    const response = await Util.Request.get(upbit.url);
+    const posts = response.data.posts;
 
-    for (const site of sites) {
-      const response = await got(site.url, {
-        header: {
-          'User-Agent': config.userAgent
-        },
-        responseType: 'json',
-        responseBodyOnly: true
-      });
-
-      const posts = response.body.data.posts;
-
-      for (const post of posts) {
-        bot.say(`[${post.assets}] ${post.text}`);
-      }
+    for (const post of posts) {
+      bot.say(`[${post.assets}] ${post.text}`);
     }
   } catch(err) {
     console.log(err);
