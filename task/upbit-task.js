@@ -16,8 +16,6 @@ const upbitTask = async (bot) => {
 
         bot.say(message);
         redis.set(post.id, "OK");
-      } else {
-        console.log(`${post.assets} 은 이미 알려진 공시입니다.`);
       }
     }
   } catch(err) {

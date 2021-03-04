@@ -6,6 +6,7 @@ const redis = require('./redis');
 
 const scheduler = async () => {
   try {
+    redis.connect();
     const bot = new TelegramBot();
 
     await upbitTask(bot);
