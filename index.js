@@ -1,6 +1,7 @@
 "use strict";
 const { TelegramBot } = require("./bot");
-const { upbitTask } = require('./scheduler');
+const { upbitTask } = require('./task');
+const redis = require('./redis');
 
 
 const scheduler = async () => {
@@ -9,9 +10,10 @@ const scheduler = async () => {
 
     await upbitTask(bot);
 
-
   } catch(err) {
     console.log(err);
+  } finally {
+    redis.disconnect();
   }
 }
 
