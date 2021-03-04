@@ -16,6 +16,8 @@ const upbitTask = async (bot) => {
 
         bot.say(message);
         redis.set(post.id, "OK");
+        console.log(`새로운 공시 정보가 감지됐습니다.`);
+        console.log(message);
       }
     }
   } catch(err) {
