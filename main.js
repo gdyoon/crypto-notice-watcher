@@ -1,5 +1,5 @@
-const { handler } = require("./index");
+const { scheduler } = require("./index");
 
 (async () => {
-  // await handler();
+  await scheduler();
 })();
