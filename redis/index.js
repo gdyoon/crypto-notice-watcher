@@ -1,21 +1,23 @@
 const redis = require('redis');
 
-let client;
+class RedisClient {
+  constructor() {
+    this._client = redis.createClient();
+  }
 
-const get = (key) => {
-  return client.get(key);
+  get(key) {
+    return this._client.get(key);
+  }
+
+  set(key, value) {
+    this._client.set(key, value);
+  }
+
+  disconnect() {
+    this._client.end(true);
+  }
 }
-
-const set = (key, value) => {
-  client.set(key, value);
-}
-
-const connect = () => client = redis.createClient();
-const disconnect = () => client.end(true);
 
 module.exports = {
-  connect,
-  get,
-  set,
-  disconnect
+  RedisClient
 }
