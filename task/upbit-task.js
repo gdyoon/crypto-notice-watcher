@@ -7,6 +7,7 @@ const logger = require('../logger').getLogger(module);
 
 const upbitTask = async (bot) => {
   try {
+    logger.info("Start upbit task watcher.")
     const upbit = config.site.upbit;
     const response = await Util.Request.get(upbit.url);
     const posts = response.data.posts;
