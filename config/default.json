@@ -11,10 +11,5 @@
             "token": "1634422182:AAGiBG6SXOjhcLb_aTw0DFm_5MC-Cdf42rs",
             "chatId": "1523821776"
         }
-    },
-    "db": {
-        "table": {
-            "notification": "tbl_upbit_notice"
-        }
     }
 }

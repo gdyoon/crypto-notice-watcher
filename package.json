@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./main.js"
+    "start": "node ./main.js",
+    "deploy": "pm2 startOrRestart ecosystem.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,6 @@
   },
   "homepage": "https://github.com/gdyoon/crypto-notice-watcher#readme",
   "dependencies": {
-    "aws-sdk": "^2.856.0",
     "config": "^3.3.4",
     "got": "^11.8.2",
     "lodash": "^4.17.21",

@@ -1,5 +1,4 @@
 "use strict";
-
 const TelegramBot = require("node-telegram-bot-api");
 const config = require("config");
 
@@ -11,7 +10,11 @@ class Telegram {
   }
 
   async say(message) {
-    await this._bot.sendMessage(this._chatId, message);
+    try {
+      await this._bot.sendMessage(this._chatId, message);
+    } catch(e) {
+      throw e;
+    }
   }
 
 }

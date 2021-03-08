@@ -22,7 +22,7 @@ const logger = (_module) => {
 }
 
 
-const getLogger = (myModule) => logger(myModule)
+const getLogger = (targetModule) => logger(targetModule)
 
 module.exports = {
   getLogger

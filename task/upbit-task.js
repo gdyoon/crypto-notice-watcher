@@ -13,9 +13,10 @@ const upbitTask = async (bot, redis) => {
 
     for (const post of posts) {
       const isNotified = await redis.get(post.id);
+      
       if(!isNotified) {
         const message = `<${post.assets}> ${post.text}`;
-        bot.say(message);
+        await bot.say(message);
         redis.set(post.id, "OK");
         logger.debug(message);
       }
