@@ -17,7 +17,7 @@ const logger = (_module) => {
       LogFormat
     ),
     transports: [
-      new winston.transports.File({ filename: 'crypto-watcher.log' }),
+      new winston.transports.File({ filename: '../log/crypto-watcher.log' }),
       new winston.transports.Console()
     ]
   });
