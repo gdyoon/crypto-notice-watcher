@@ -28,7 +28,7 @@
     "moment-timezone": "^0.5.33",
     "node-telegram-bot-api": "^0.51.0",
     "redis": "^3.0.2",
-    "sleep": "^6.3.0",
+    "sleep-promise": "^9.1.0",
     "winston": "^3.3.3"
   }
 }

@@ -1,6 +1,6 @@
 "use strict";
 const config = require("config");
-const sleep = require("sleep");
+const sleep = require("sleep-promise");
 const { scheduler } = require("./index");
 const { Random } = require("./util");
 const logger = require("./logger").getLogger(module);
@@ -17,7 +17,7 @@ const printBeforeStart = () => {
   while (true) {
     await scheduler();
 
-    sleep.sleep(Random.getRandomSecond());
+    await sleep(Random.getRandomSecond() * 1000);
   }
   
 })();
