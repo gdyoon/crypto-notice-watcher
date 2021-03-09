@@ -21,6 +21,7 @@
   "homepage": "https://github.com/gdyoon/crypto-notice-watcher#readme",
   "dependencies": {
     "config": "^3.3.4",
+    "cowsay": "^1.4.0",
     "got": "^11.8.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
