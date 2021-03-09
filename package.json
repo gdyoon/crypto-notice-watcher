@@ -23,6 +23,8 @@
     "config": "^3.3.4",
     "got": "^11.8.2",
     "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
     "node-telegram-bot-api": "^0.51.0",
     "redis": "^3.0.2",
     "sleep": "^6.3.0",

@@ -1,9 +1,11 @@
 "use strict";
 const winston = require('winston');
 const path = require('path');
+const moment = require("moment-timezone");
+const config = require("config");
 
 const LogFormat = winston.format.printf(
-  (info) => `[${info.timestamp}][${info.level.toUpperCase()}][${info.label}][${process.pid}]${info.message}`
+  (info) => `[${moment().tz(config.timezone).format("YYYY-MM-DD HH:mm:ss")}][${info.level.toUpperCase()}][${info.label}][${process.pid}]${info.message}`
 );
 
 const logger = (_module) => {
