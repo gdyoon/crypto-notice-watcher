@@ -1,9 +1,8 @@
 {
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15",
-    "cronSchedule": "*/7 * * * * *",
     "schedule": {
         "randomSecond": {
-            "min": 5,
+            "min": 1,
             "max": 10
         }
     },
@@ -15,7 +14,7 @@
     "bot": {
         "telegram": {
             "token": "1634422182:AAGiBG6SXOjhcLb_aTw0DFm_5MC-Cdf42rs",
-            "chatId": "@goorypto_watcher"
+            "chatId": "1523821776"
         }
     }
 }
